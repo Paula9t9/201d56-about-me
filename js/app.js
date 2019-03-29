@@ -1,5 +1,6 @@
 'use strict';
 
+var currentQuestion=0;
 var score = 0;
 var failScore = 0;
 var dexPokemon = '365';
@@ -24,13 +25,41 @@ var failReplyArray = [
   'Are you picking the wrong answers on purpose?',
   'I have good news, and I have bad news. The good news is, your \'perfect\' score is intact! You don\'t need to hear the bad news...'];
 
+var questionArray = [
+  'Question #1: \n Do I play video games?',
+  'Next question: Do I play Fortnite?',
+  'Here\'s an easy one: \nDo I like to code?',
+  'Do I have a cat?',
+  'Do I play CandyCrush?',
+  'According to my Pokemon Go Pokedex, how many Pokemon have I caught?',
+  'What gaming platform do I own? \n(Anything you can play a game on. For example: PS4.'
+]
 
+var answerArray = [
+  true,
+  false,
+  true,
+  true,
+  true,
+  dexPokemon,
+  platformArray
+]
+function askQuestion(i){
+ var response = prompt(questionArray[i]);
+ console.log('question was asked');
+ console.log(questionArray[i]);
+ return response;
+} 
 alert('Before we get into the serious stuff, let\'s play with some random trivia about me.');
 
+//this function will take an array index, which will pass that to a question array to display the question
 
+//funcition will get the user response and reply accordingly
 var userName = prompt('But first, what\'s your name?');
 
 //Used the book to remember the exact switch syntax
+// I didn't want to repeat code, but luckily I found this: https://stackoverflow.com/questions/13207927/switch-statement-multiple-cases-in-javascript
+
 switch (userName.toLowerCase()) {
 
 case 'paula':
@@ -45,7 +74,7 @@ case 'brook':
   alert('Hello, teacher!');
   break;
 
-// I didn't want to repeat code, but luckily I found this: https://stackoverflow.com/questions/13207927/switch-statement-multiple-cases-in-javascript
+
 case 'lena':
 case 'david':
 case 'ashabrai':
@@ -59,91 +88,43 @@ default:
   break;
 }
 
-
-var answer1 = prompt('Question #1: \n Do I play video games?');
-
-if(checkAnswer(answer1)){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert(failReplyArray[failScore]);
-  failScore++;
+for(var i=0; i<questionArray.length -2;i++){
+  var answer = askQuestion(currentQuestion);
+  var tOF = checkAnswer(answer); 
+  reply(tOF);
 }
-console.log('User answered question #1 with: ' + answer1);
-console.log('Current score is: ' + score);
-
-var answer2 = prompt('Next question: Do I play Fortnite?');
-
-if(!checkAnswer(answer2)){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert(failReplyArray[failScore]);
-  failScore++;
-}
-console.log('User answered question #2 with: ' + answer2);
-console.log('Current score is: ' + score);
-
-var answer3 = prompt('Here\'s an easy one: \nDo I like to code?');
-
-if(checkAnswer(answer3)){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert(failReplyArray[failScore]);
-  failScore++;
-}
-console.log('User answered question #3 with: ' + answer3);
-console.log('Current score is: ' + score);
-
-var answer4 = prompt('Do I have a cat?');
-
-if(checkAnswer(answer4)){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert(failReplyArray[failScore]);
-  failScore++;
-}
-console.log('User answered question #4 with: ' + answer4);
-console.log('Current score is: ' + score);
-
-var answer5 = prompt('Do I play CandyCrush?');
-
-if(checkAnswer(answer5)){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert(failReplyArray[failScore]);
-  failScore++;
-}
-console.log('User answered question #5 with: ' + answer5);
-console.log('Current score is: ' + score);
 
 
-var answer6;
 var dexAttempts = 0;
-while(answer6 !== dexPokemon && dexAttempts < 4){
-  answer6 = prompt('According to my Pokemon Go Pokedex, ' +
-  'how many Pokemon have I caught?');
-  dexAttempts++;
-}
-
-if(answer6 === dexPokemon){
-  alert(correctReplyArray[score]);
-  score++;
-} else {
-  alert('Sorry, you ran out of attempts. No points for you.');
-  failScore++;
-}
-
-
 var platAttempts = 0;
-do{
-  var answer7 = prompt('What gaming platform do I own? \n(Anything you can play a game on. For example: PS4.');
-  platAttempts++;
-} while (!platformArray.includes(answer7.toLowerCase()) &&
-  platAttempts < 6);
+var isGuessRight=false;
+
+while(isGuessRight === false && dexAttempts < 4){ 
+  var loopAnswer=askQuestion(currentQuestion);
+  var tempAnswer=checkAnswer(loopAnswer);
+  currentQuestion--;
+  reply(isGuessRight);
+  dexAttempts++;
+  if(answerArray[currentQuestion]===tempAnswer){
+    isGuessRight=true;
+  }
+}
+
+// if(answer6 === dexPokemon){
+//   alert(correctReplyArray[score]);
+//   score++;
+// } else {
+//   alert('Sorry, you ran out of attempts. No points for you.');
+//   failScore++;
+// }
+
+
+
+// do{
+//   var answer7 = prompt();
+//   platAttempts++;
+// } while (!platformArray.includes(answer7.toLowerCase()) &&
+//   platAttempts < 6);
 
 //Used this page to figure out how to print array:
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
@@ -180,6 +161,7 @@ default:
 
 
 // Didn't end up going this route, but used the example to remember how to write a function in js: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
+
 function checkAnswer(answer) {
 
   // Tried to use .contains (Java habits), but after getting an error I used this to fix it: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
@@ -191,6 +173,19 @@ function checkAnswer(answer) {
     return false;
   } else {
     console.log('Unrecognized Input');
-    return false;
+    return answer;
   }
+  
+}
+
+function reply(correctness){
+
+  if(correctness === answerArray[currentQuestion]){
+    alert(correctReplyArray[score]);
+    score++;
+  } else {
+    alert(failReplyArray[failScore]);
+    failScore++;
+  }
+  currentQuestion++;
 }
