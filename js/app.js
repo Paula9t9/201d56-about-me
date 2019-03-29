@@ -27,6 +27,7 @@ var failReplyArray = [
 
 alert('Before we get into the serious stuff, let\'s play with some random trivia about me.');
 
+
 var userName = prompt('But first, what\'s your name?');
 
 //Used the book to remember the exact switch syntax
@@ -119,11 +120,11 @@ if(checkAnswer(answer5)){
 console.log('User answered question #5 with: ' + answer5);
 console.log('Current score is: ' + score);
 
+
 var answer6;
 var dexAttempts = 0;
 while(answer6 !== dexPokemon && dexAttempts < 4){
-  answer6 = prompt('According to my Pokemon Go Pokedex, ' +
-  'how many Pokemon have I caught?');
+  answer6 = prompt('According to my Pokemon Go Pokedex, how many Pokemon have I caught?');
   dexAttempts++;
 }
 
@@ -134,6 +135,7 @@ if(answer6 === dexPokemon){
   alert('Sorry, you ran out of attempts. No points for you.');
   failScore++;
 }
+
 
 var platAttempts = 0;
 do{
@@ -155,6 +157,7 @@ if(platformArray.includes(answer7.toLowerCase())){
   failScore++;
 }
 
+
 switch (score) {
 
 case 5:
@@ -174,8 +177,8 @@ default:
   break;
 }
 
-// Didn't end up going this route, but used the example to remember how to write a function in js: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
 
+// Didn't end up going this route, but used the example to remember how to write a function in js: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
 function checkAnswer(answer) {
 
   // Tried to use .contains (Java habits), but after getting an error I used this to fix it: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
