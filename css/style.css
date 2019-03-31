@@ -7,8 +7,11 @@ html {
 }
 
 header {
-  background-color: #151f23;
+  background-color: #3d6b7b;
   text-align: center;
+  padding: 5px;
+  margin: -15px;
+  margin-top: 10px;
 }
 
 main {
@@ -35,6 +38,7 @@ https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
   font-style: italic;
   color: azure;
   text-align: center;
+  padding: 5px
 }
 
 .info {
@@ -68,8 +72,35 @@ https://stackoverflow.com/questions/26433943/how-can-i-get-the-headings-in-css-c
   border: #BDBDBD;
   border-radius: 10px;
   padding: 10px;
+  margin: auto;
+  box-shadow: 5px 5px 5px #264550;
+  display: inline-block;
+}
+
+.button:hover{
+  background-color: #bbe2f1;
+}
+
+footer {
+  color: #f2f2f2;
+  background-color: #3d6b7b;
+  font-size: 25px;
+  width: 100%;
+  margin: -15px;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+footer p{
+  font-size: 18px;
+}
+
+/* Styling for social media icons */
+.fa {
+  padding: 10px;
   margin: 5px;
 }
+
 
 
 
