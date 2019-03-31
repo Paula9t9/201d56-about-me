@@ -1,9 +1,27 @@
 
 html {
-  background-color: black;
-  color: beige;
+  color: #eff3fb;
+  background-color: #151f23;
   font-family: sans-serif;
   padding: 8px;
+}
+
+header {
+  background-color: #151f23;
+  text-align: center;
+}
+
+main {
+  margin-top: 110px;
+}
+
+/* Used these pages to figure out how to make a sticky header:
+https://www.w3schools.com/howto/howto_js_sticky_header.asp 
+https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
+.sticky {
+  position:fixed;
+  top: 0;
+  width: 100%;
 }
 
 .top {
@@ -16,15 +34,37 @@ html {
   /* Couldn't remember how to italic, lol: https://www.w3schools.com/cssref/pr_font_font-style.asp  */
   font-style: italic;
   color: azure;
+  text-align: center;
 }
 
 .info {
   color: rgb(147, 201, 201);
-  width: 30%;
+  width: 100%;
+}
+
+/* Used this site to figure out columns:
+https://www.w3schools.com/CSS/css3_multiple_columns.asp */
+.lists {
+  column-count: auto;
+  column-width: 463px;
+  column-gap: 5px;
+}
+
+
+/* Used this site to figure out how to prevent headers from ending up in the wrong row:
+https://stackoverflow.com/questions/26433943/how-can-i-get-the-headings-in-css-columns-to-keep-with-their-paragraphs */
+.sublist{
+  width:100%;
+  display:inline-block;
 }
 
 .degree {
   font-style: italic;
 }
+
+.button{
+  background-color: #455A64;
+}
+
 
 

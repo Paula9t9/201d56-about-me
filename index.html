@@ -5,58 +5,78 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <header>
+    <header class="sticky">
       <h1 class="top">Paula Thomas</h1>
       <h3 class="top">A wearer of many hats</h3>
     </header>
     <main>
 
-      <p class="bio">I find fulfillment in using my skills to make things and/or support the people who make things. </p><p class="bio"> At the end of the day, there is nothing more satisfying than watching something come to life. </p>
+      <blockquote class="bio">
+        <p>I find fulfillment in using my skills to make things and/or support the people who make things. </p>
+        <p> At the end of the day, there is nothing more satisfying than watching something come to life. </p>
+      </blockquote>
 
-      <h2>Experience</h2>
+      <!-- Added sublists to prevent elements headers from getting separated from their lists. 
+        source: https://stackoverflow.com/questions/26433943/how-can-i-get-the-headings-in-css-columns-to-keep-with-their-paragraphs -->
+      <div class="lists">
+        <div class="sublist">
+          <h2>Experience</h2>
 
-      <h4 class="info">Experimented With:</h4>
-      <ul class="info">
-        <li>Android Dev (Java, XML, Android Studio)</li>
-        <li>Game Dev (C#, Unity)</li>
-        <li>Bot Dev (Python, Discord)</li>
-      </ul>
+          <h4 class="info">Experimented With:</h4>
+          <ul class="info">
+            <li>Android Dev (Java, XML, Android Studio)</li>
+            <li>Game Dev (C#, Unity)</li>
+            <li>Bot Dev (Python, Discord)</li>
+          </ul>
 
-      <h4 class="info">Worked With:</h4>
-      <ul class="info">
-        <li>Writing/Editing (Novel, Journalism, and Copywriting)</li>
-        <li>Printing (Litho, Roll2Roll & Sheetfed)</li>
-        <li>Marketing (Social Media Focus)</li>
-        <li>The Art of Scaring People (TV Zombie and Theme Park Cave Monster)</li>
-        <li>Lifting Heavy Things (Logistics and Fullfillment)</li>
-      </ul>
+          <h4 class="info">Worked With:</h4>
+          <ul class="info">
+            <li>Writing/Editing (Novel, Journalism, and Copywriting)</li>
+            <li>Printing (Litho, Roll2Roll & Sheetfed)</li>
+            <li>Marketing (Social Media Focus)</li>
+            <li>The Art of Scaring People (TV Zombie and Theme Park Cave Monster)</li>
+            <li>Lifting Heavy Things (Logistics and Fullfillment)</li>
+          </ul>
+        </div>
+        <!-- End of Experience List -->
 
-      <h2>Education</h2>
+        <div class="sublist">
+          <h2>Education</h2>
+          <ul class="info">
+            <li>Codefellows <span class="degree">HTML, CSS, Javascript, Java</span></li>
+            <li>Onward 2 Opportunity <span class="degree">Certified Associate in Project Management</span></li>
+            <li>University of Washington <span class="degree">Bachelor of Arts in Anthropology</span></li>      
+          </ul>
+        </div>
+        <!-- End of Education List -->
+        
+        <div class="sublist">
+          <h2>Top Ten Favorite Games</h2>
 
-      <ul class="info">
-        <li>Codefellows <span class="degree">HTML, CSS, Javascript, Java</span></li>
-        <li>Onward 2 Opportunity <span class="degree">Certified Associate in Project Management</span></li>
-        <li>University of Washington <span class="degree">Bachelor of Arts in Anthropology</span></li>      
-      </ul>
+          <ol class="info">
+            <li>Tomb Raider Reboot</li>
+            <li>Halo Reach</li>
+            <li>The Elder Scrolls Legends</li>
+            <li>Age of Empires</li>
+            <li>Candy Crush Jelly</li>
+            <li>Graveyard Keeper</li>
+            <li>Overwatch</li>
+            <li>Pokemon Black</li>
+            <li>Assassin's Creed Chronicles: China</li>
+            <li>Shadow of Mordor</li>
+          </ol>
+        </div>
+        <!-- End of Favorite List -->
+    </div>
+    <!-- End of lists -->
 
-      <h2>Top Ten Favorite Games</h2>
-
-      <ol class="info">
-        <li>Tomb Raider Reboot</li>
-        <li>Halo Reach</li>
-        <li>The Elder Scrolls Legends</li>
-        <li>Age of Empires</li>
-        <li>Candy Crush Jelly</li>
-        <li>Graveyard Keeper</li>
-        <li>Overwatch</li>
-        <li>Pokemon Black</li>
-        <li>Assassin's Creed Chronicles: China</li>
-        <li>Shadow of Mordor</li>
-      </ol>
-
+      <!-- Button idea borrowed from Chaitanya https://github.com/chaitanyanarukulla/201d56-about-me/blob/master/index.html -->
       <h2>Bonus Questions </h2>
 
-      <p class="info">Nevermind, you already answered them!</p>
+      <p class="info">Want to learn more about me? Try out this trivia game:</p>
+      
+      <a onclick="playTriviaGame()" class="button">All About Paula</a>
+      
     </main>
     <footer>
 

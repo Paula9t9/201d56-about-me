@@ -27,10 +27,7 @@ var answerArray = [
   platformArray
 ];
 
-
-playTriviaGame();
-
-function playTriviaGame () {
+function playTriviaGame() {
 
   alert('Before we get into the serious stuff, let\'s play with some random trivia about me.');
 
