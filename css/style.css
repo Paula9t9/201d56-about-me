@@ -63,7 +63,12 @@ https://stackoverflow.com/questions/26433943/how-can-i-get-the-headings-in-css-c
 }
 
 .button{
-  background-color: #455A64;
+  color: #212121;
+  background-color: #BDBDBD;
+  border: #BDBDBD;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
 }
 
 
