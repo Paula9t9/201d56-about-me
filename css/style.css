@@ -18,6 +18,10 @@ main {
   margin-top: 110px;
 }
 
+hr {
+  color: #eff3fb;
+}
+
 /* Used these pages to figure out how to make a sticky header:
 https://www.w3schools.com/howto/howto_js_sticky_header.asp 
 https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
