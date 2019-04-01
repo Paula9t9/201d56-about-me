@@ -58,7 +58,6 @@ https://www.w3schools.com/CSS/css3_multiple_columns.asp */
   column-gap: 5px;
 }
 
-
 /* Used this site to figure out how to prevent headers from ending up in the wrong row:
 https://stackoverflow.com/questions/26433943/how-can-i-get-the-headings-in-css-columns-to-keep-with-their-paragraphs */
 .sublist{
